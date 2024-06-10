@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clubs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(4.jpg);
+            background-size:cover;
+            margin: 0 ;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #31003b;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+           
+            font-weight: 700;
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #dfeef1;
+        }
+        .club-list {
+            margin-bottom: 20px;
+        }
+        .club {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color:#100101 ;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            margin-bottom: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .club-name {
+            flex: 1; /* Fill remaining space */
+            margin-right: 10px;
+            font-weight: bold;
+            color: #f2e9e9;
+        }
+        .club-link {
+            text-decoration: none;
+            color: #000;
+            transition: color 0.3s ease;
+        }
+        .club-link:hover {
+            color: #333;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 10px; /*space between button and link */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="club-list">
+            <h2> CULTURAL </h2>
+            <div class="club">
+                <span class="club-name">Music Society</span>
+                <a href="./clubs/music.html" target="_blank">Website</a>
+            </div>
+            <div class="club">
+                <span class="club-name">Art Club</span>
+                <a href="./clubs/art.html" target="_blank">Website</a>
+            </div>
+            <div class="club">
+                <span class="club-name">Dance Team</span>
+                <a href="./clubs/dance.html" target="_blank">Website</a>
+            </div>
+            <div class="club">
+                <span class="club-name">Literary Society</span>
+                <a href="./clubs/lite.html" target="_blank">Website</a>
+            </div>
+        </div>
+
+        <div class="club-list">
+            <h2>COMPETITIVE</h2>
+            <div class="club">
+                <span class="club-name">AUV Club</span>
+                <a href="./club pages/AUV/Pages/page1.html" target="_blank">Website</a>
+            </div>
+            <div class="club">
+                <span class="club-name">MARS Team</span>
+                <a href="./club pages/MARS/Pages/page1.html" target="_blank">Website</a>
+            </div>
+        </div>
+
+        <div class="club-list">
+            <h2>TECHNICAL</h2>
+            <div class="club">
+                <span class="club-name">Computer Science Club</span>
+                <a href="./club pages/CS/Pages/page1.html" target="_blank">Website</a>
+            </div>
+            <div class="club">
+                <span class="club-name">Robotics Club</span>
+                <a href="./club pages/ROBOTICS/Pages/page1.html" target="_blank">Website</a>
+            </div>
+            <div class="club">
+                <span class="club-name">TAD (Talpade Aero Design Club)</span>
+                <a href="./club pages/TAD/Pages/page1.html" target="_blank">Website</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+

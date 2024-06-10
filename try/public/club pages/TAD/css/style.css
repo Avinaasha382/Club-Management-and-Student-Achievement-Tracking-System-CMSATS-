@@ -1,0 +1,269 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 15px;
+
+}
+.container{
+    height: 100%;
+    background-image: url(../images/bg1.jpeg);
+    background-attachment: scroll;
+    background-position: center top;
+    background-repeat: cover;
+    position: relative;
+    padding-bottom: 50px;
+}
+
+.navigation{
+    max-width: 1300px;
+    padding: 50px 10px 0 10px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.log{
+    width: 10%;
+}
+ul{
+    display: flex;
+    flex-wrap: wrap;
+}
+li{
+    list-style: none;
+    padding-left: 50px;
+    font-weight: 700px;
+    letter-spacing: 4px;
+    font-size: 1rem;
+
+}
+.icon{
+    display: none;
+    background-color: transparent;
+    border: none;
+
+}
+.fa{
+    font-size: 35px;
+
+}
+.navigation a{
+    text-decoration: none;
+    color: black;
+}
+.social{
+    text-align: right;
+    padding-top: 5px;
+}
+.social-icon{
+    padding: 6px 7px;
+    margin: 2px 2px;
+    font-size: 1.3rem;
+    background-color: black;
+    color: white;
+    border-radius: 100%;
+}
+.text a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.face{
+    padding: 6px 10px;
+}
+
+.center{
+    max-width: 1200px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 20px 0px 20px;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.text{
+    width: 50%;
+    padding: 5% 0 0 0;
+
+}
+.text h2{
+    font-size: 3rem;
+    font-weight: 700;
+}
+.bg{
+    background-color: black;
+    color: white;
+    display: inline-block;
+    padding: 0 5px;
+}
+.text h1{
+    font-size: 5.2rem;
+}
+.text p{
+    font-size: 1.3rem;
+    font-weight: 800;
+    padding-right: 10%;
+}
+.btn{
+    width: 200px;
+    height: 55px;
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.image{
+    width: 50% ;
+}
+.rover{
+    width: 85%;
+    border-radius: 100%;
+}
+footer{
+    max-width: 1300px;
+    padding: 30px 10px 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+}
+.copyright{
+    width: 50%;
+}
+.copyright p{
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding-bottom: 40px;
+}
+.contact{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+.number{
+    text-align: right;
+}
+.bg1{
+    margin: 0 5px;
+    font-size: 1.5rem;
+}
+.bg2{
+    display: block;
+    margin: 2px 5px;
+    font-size: 2rem;
+
+}
+
+@media only screen and (min-width: 768px){
+    .container{
+        height: 100vh;
+
+    }
+}
+@media only screen and (max-width: 1070px){
+    .social{
+        width: 50%;
+        display: flex;
+        position: absolute;
+        bottom: 70px;
+    }
+    .copyright p{
+        padding-top: 0;
+    }
+    li{
+        padding-left: 43px;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .container{
+        height: auto;
+
+    }
+    h1,h2,h3{
+        margin-bottom: 25px;
+    }
+    .icon{
+        display: block;
+        outline: none;
+    }
+    .log{
+        width: 120px;
+    }
+
+    li{
+        padding: 10px 30px 0 0;
+        font-size: 0.9rem;
+
+    }
+    ul{
+        position: absolute;
+        top: 100px;
+        margin: 0;
+        padding-left: 0;
+        display: none;
+
+    }
+    .center{
+        text-align: center;
+
+    }
+    .text{
+        width: 100%;
+        padding: 60px 0;
+    }
+    .text p{
+        padding-right: 0;
+
+    }
+    .text h1{
+        font-size: 5rem;
+    }
+    .image{
+        width: 100%;
+
+    }
+    .rover{
+        width: 80%;
+    }
+    footer{
+        display: block;
+    }
+    .copyright{
+        width: 100%;
+        text-align: center;
+    }
+    .social{
+        width: 95%;
+        display: flex;
+
+        justify-content: center;
+        bottom: 50px;
+    }
+    .social-icon{
+        margin: 0 20px;
+    }
+    .contact{
+        width: 100%;
+        justify-content: center;
+        padding: 25px;
+    }
+    .bg2{
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+}

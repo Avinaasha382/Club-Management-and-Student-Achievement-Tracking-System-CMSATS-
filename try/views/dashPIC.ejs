@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #000;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #aeb632;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .profile-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            margin-left:35%;
+        }
+       
+        h1 {
+            text-align: center;
+            font-size: 28px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .profile-info {
+            margin-top: 20px;
+        }
+        .profile-info p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #333;
+        }
+        .event-list {
+            margin-top: 20px;
+        }
+        .event {
+            background-color: #fff;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            margin-bottom: 10px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .event-name {
+            font-weight: bold;
+            color: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .participants {
+            display: none;
+        }
+        .toggle-button {
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-bottom: 10px; /* Add margin between consecutive buttons */
+            font-size: 14px;
+        }
+
+        .toggle-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-card">
+            <h1>Profile</h1>
+            <div class="profile-info">
+                <p><strong>Name:</strong> <%= pic_name %></p>
+                <p><strong>PIC ID:</strong> <%= pic_id %></p>
+                <% if (club_id.length > 0) { %>
+                    <p><strong>Clubs:</strong></p>
+                    <ul>
+                        <% for (let i = 0; i < club_id.length; i++) { %>
+                            <li><%= club_id[i] %> - <%= club_name[i] %> (<%= club_type[i] %>)</li>
+                        <% } %>
+                    </ul>
+                <% } %>
+            </div>
+        </div>
+
+        <div class="event-list">
+            <% for (let i = 0; i < club_name.length; i++) { %>
+                <div class="event">
+                    <h2><%= club_name[i] %></h2>
+                    <% const processedEvents = new Set(); %>
+                    <% for (let j = 0; j < ename.length; j++) { %>
+                        <% if (cname[j] === club_name[i] && !processedEvents.has(ename[j])) { %>
+                            <div class="event-name">
+                                <%= ename[j] %>
+                                <button class="toggle-button" onclick="toggleParticipants(this)">See Participants</button>
+                            </div>
+                            <ul class="participants">
+                                <% for (let k = 0; k < pid.length; k++) { %>
+                                    <% if (ename[k] === ename[j]) { %>
+                                        <li><%= pid[k] %></li>
+                                    <% } %>
+                                <% } %>
+                            </ul>
+                            <% processedEvents.add(ename[j]); %>
+                        <% } %>
+                    <% } %>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    <script>
+        function toggleParticipants(button) {
+            const participants = button.parentElement.nextElementSibling;
+            participants.style.display = participants.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

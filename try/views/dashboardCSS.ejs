@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body{
+            background-color: rgb(26 26 26);
+        }
+        .clickable-card {
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .clickable-card:hover {
+            transform: translateY(-5px);
+        }
+        .profile-card {
+            background-color: #f9e79f; 
+            border: none; 
+            border-radius: 15px; 
+        }
+        .clubs-card {
+            background-color: #85c1e9; 
+            border: none; 
+            border-radius: 15px; 
+        }
+        .events-card {
+            background-color: #ffcc99; 
+            border: none; 
+            border-radius: 15px; 
+        }
+        .achievements-card {
+            background-color: #d7bde2; 
+            border: none; 
+            border-radius: 15px; 
+        }
+        .profile-link {
+            color: black !important; 
+            text-decoration: none; 
+        }
+        .profile-link:hover, .profile-link:focus {
+            color: black; 
+            text-decoration: none; 
+        }
+        .thoughts-card {
+            background-color: #90EE90;
+            border: none;
+            border-radius: 15px;
+            
+        }
+        .calendar-card {
+            background-color: #85c1e9;
+            border: none;
+            border-radius: 15px;
+            
+        }
+        .elevated-sheet {
+            background-color: #f5f5f5; 
+            padding: 20px;
+            margin-top: 50px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1); 
+        }
+        .no-decoration {
+            color: inherit;
+            text-decoration: none;
+        }
+        .no-decoration:hover {
+            color: inherit;
+            text-decoration: none;
+        }
+        .today {
+        background-color:  #e02929; /* You can adjust the background color as needed */
+        }
+        .calendar-table td {
+        border: 10px solid black; /* Adjust the border thickness as needed */
+    }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Student Dashboard</a>
+        </div>
+    </nav>
+
+    <script>
+        function submitform(){
+		document.getElementById("proform").submit();
+        }
+    </script>
+<form name="proform" id="proform" method="post" action="/profileCSS">
+    <input type="hidden" name="id" value="<%= id %>">
+</form>
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <div class="row">
+            <!-- Profile Card -->
+            <div class="col-md-6">
+                <a href="#" onclick="submitform()" class="card clickable-card profile-card profile-link">
+                    <div class="card-body">
+                        <h5 class="card-title">Profile</h5>
+                        <p class="card-text">View and update your profile information.</p>
+                    </div>
+                </a>
+            </div>
+
+
+            <!-- Student Clubs Card -->
+            <div class="col-md-6">
+                    <a href="club.html" class="card clickable-card clubs-card profile-link">
+                    <div class="card-body">
+                        <h5 class="card-title">Student Clubs</h5>
+                        <p class="card-text">Explore and join student clubs.</p>
+                    </div>
+                    </a>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <!-- Events Card -->
+            <div class="col-md-6">
+                <div class="card clickable-card events-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Events</h5>
+                        <p class="card-text">Discover upcoming events and activities.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Achievement Tracking Card -->
+            <div class="col-md-6">
+                <div class="card clickable-card achievements-card">
+                    <div class="card-body">
+                        <h5 class="card-title">Achievement Tracking</h5>
+                        <p class="card-text">Track your academic and extracurricular achievements.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                    <div class="card clickable-card thoughts-card">
+                        <div class="card-body">
+                            <h4 class="card-title">Thought of the Day</h4>
+                            <h3><p class="thought-text">Fetching thought...</p></h3>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card clickable-card calendar-card">
+                    <div class="card-body">
+                        <h4 class="card-title" id="calendar-title"></h4>
+                        <script>
+                            // Get current month and year
+                            const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                            const currentDate = new Date();
+                            const currentMonth = months[currentDate.getMonth()];
+                            const currentYear = currentDate.getFullYear();
+                            
+                            // Update card title
+                            document.getElementById('calendar-title').textContent = `${currentMonth} - ${currentYear}`;
+                        </script>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Sun</th>
+                                    <th scope="col">Mon</th>
+                                    <th scope="col">Tue</th>
+                                    <th scope="col">Wed</th>
+                                    <th scope="col">Thu</th>
+                                    <th scope="col">Fri</th>
+                                    <th scope="col">Sat</th>
+                                </tr>
+                            </thead>
+                            <tbody id="calendar"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Fetch thought of the day from Quotable API
+        fetch('https://api.quotable.io/random')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.querySelector('.thought-text').textContent = data.content;
+            })
+            .catch(error => {
+                console.error('Error fetching thought:', error);
+                document.querySelector('.thought-text').textContent = 'Failed to fetch thought';
+            });
+    </script>
+<script>
+// Function to generate a calendar for the current month
+function generateCalendar() {
+    const currentDate = new Date(); // Get the current date
+    const currentMonth = currentDate.getMonth(); // Get the current month (0-indexed)
+    const currentYear = currentDate.getFullYear(); // Get the current year
+    const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate(); // Get the number of days in the current month
+
+    const calendarContainer = document.getElementById('calendar'); // Get the calendar container tbody element
+
+    let calendarHTML = ''; // Initialize an empty string to store the calendar HTML
+
+    let dayCount = 1; // Initialize the day count
+
+    // Loop through each week
+    for (let week = 0; week < 6; week++) {
+        calendarHTML += '<tr>'; // Start a new row for each week
+
+        // Loop through each day of the week
+        for (let dayOfWeek = 0; dayOfWeek < 7; dayOfWeek++) {
+            if ((week === 0 && dayOfWeek < new Date(currentYear, currentMonth, 1).getDay()) || dayCount > daysInMonth) {
+                // Add empty cells before the first day of the month and after the last day of the month
+                calendarHTML += '<td></td>';
+            } else {
+                // Add a cell with the day of the month
+                const date = new Date(currentYear, currentMonth, dayCount);
+                const isToday = date.toDateString() === currentDate.toDateString();
+                calendarHTML += `<td class="${isToday ? 'today' : ''}">${dayCount}</td>`;
+                dayCount++;
+            }
+        }
+
+        calendarHTML += '</tr>'; // End the row for each week
+    }
+
+    // Set the calendar HTML content
+    calendarContainer.innerHTML = calendarHTML;
+}
+
+// Call the generateCalendar function when the page loads
+window.onload = generateCalendar;
+
+</script>
+</body>
+</html>
+
+
+
+
