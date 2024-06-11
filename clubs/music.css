@@ -1,0 +1,61 @@
+/* Reset default margin and padding */
+/* Reset default margin and padding */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('m.jpg'); /* Replace 'background-image.jpg' with your image file path */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; 
+    
+}
+
+header {
+    background-color: #00035c;
+    color: #fff;
+    padding: 20px;
+    display: flex; /* Align items in header horizontally */
+    justify-content: space-between; /* Space items evenly along the main axis */
+    align-items: center; /* Center items vertically */
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex; /* Align items in nav horizontally */
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    padding-top: 540px;
+    font-size: large;
+    text-align: center;
+    color:#fff;
+
+}
+.about .h2{
+    padding-top: 50px;
+    font-size: large;
+}
+
+footer {
+    background-color: #110101;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
